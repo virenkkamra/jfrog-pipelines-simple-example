@@ -99,30 +99,20 @@
 #             - echo: Hello World
 
 
-# pipelines:
-#   - name: viren_demo
-#     steps:
-#       - name: demo_step
-#         type: Bash
-#         execution:
-#           onExecute:
-#             - echo: Hello World
-#             - echo: This is a demo step!
-
-
----
-name: hello-world-pipeline
-description: A simple pipeline that prints "Hello world!".
-
-tasks:
-  - name: print-hello-world
-    script: echo "Hello world!"
-
-
 # ---
-# pipelines:
-#   - name: viren_demo
-#     tasks:
-#       - name: print-hello-world
-#         script: echo "Hello world!"
+# name: hello-world-pipeline
+# description: A simple pipeline that prints "Hello world!".
+
+# tasks:
+#   - name: print-hello-world
+#     script: echo "Hello world!"
+
+
+
+
+pipelines:
+  - name: viren_demo
+    tasks:
+      - name: print-hello-world
+        script: echo "Hello world!"
 
