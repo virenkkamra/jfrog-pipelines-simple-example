@@ -114,5 +114,5 @@ pipelines:
   - name: viren_demo
     steps:
       - name: print-hello-world
-        script: echo "Hello world!"
+        script: echo Hello world!
 
