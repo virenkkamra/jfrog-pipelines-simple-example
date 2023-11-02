@@ -112,7 +112,7 @@
 
 pipelines:
   - name: viren_demo
-    tasks:
+    steps:
       - name: print-hello-world
         script: echo "Hello world!"
 
