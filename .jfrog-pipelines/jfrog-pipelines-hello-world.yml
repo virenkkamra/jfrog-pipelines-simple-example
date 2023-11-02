@@ -90,16 +90,6 @@ template: true   # required for local templates
 #             - echo "CommitSha is $res_thisPropertyBag_commitSha"
 
 
-# pipelines:
-#   - name: viren_demo
-#     steps:
-#       - name: demo_step
-#         type: Bash
-#         execution:
-#           onExecute:
-#             -echo: Hello World
-
-
 pipelines:
   - name: viren_demo
     steps:
@@ -108,7 +98,17 @@ pipelines:
         execution:
           onExecute:
             - echo: Hello World
-            - echo: This is a demo step!
+
+
+# pipelines:
+#   - name: viren_demo
+#     steps:
+#       - name: demo_step
+#         type: Bash
+#         execution:
+#           onExecute:
+#             - echo: Hello World
+#             - echo: This is a demo step!
 
 
 # ---
