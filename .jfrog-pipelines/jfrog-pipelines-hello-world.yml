@@ -99,13 +99,13 @@
 #             - echo: Hello World
 
 
-# ---
-# name: hello-world-pipeline
-# description: A simple pipeline that prints "Hello world!".
+---
+name: hello-world-pipeline
+description: A simple pipeline that prints "Hello world!".
 
-# tasks:
-#   - name: print-hello-world
-#     script: echo "Hello world!"
+tasks:
+  - name: print-hello-world
+    script: echo "Hello world!"
 
 
 
@@ -121,15 +121,15 @@
 
 
 
----
-pipelines:
-  - name: viren_demo
-    steps:
-      - name: print_hello_world
-        type: Bash
-        execution:
-          onExecute:
-            - task: echo
-              args:
-                - Hello World!
+# ---
+# pipelines:
+#   - name: viren_demo
+#     steps:
+#       - name: print_hello_world
+#         type: Bash
+#         execution:
+#           onExecute:
+#             - task: echo
+#               args:
+#                 - Hello World!
 
