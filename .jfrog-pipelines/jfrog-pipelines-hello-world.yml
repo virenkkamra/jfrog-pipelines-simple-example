@@ -113,6 +113,6 @@
 pipelines:
   - name: viren_demo
     steps:
-      - name: print-hello-world
-        script: echo Hello world!
+      - name: print_hello_world
+        script: echo "Hello world!"
 
