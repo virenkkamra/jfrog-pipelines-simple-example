@@ -122,7 +122,6 @@
 ---
 pipelines:
   - name: viren_demo
-    description: A simple pipeline that prints "Hello world!".
     tasks:
       - name: print-hello-world
         script: echo "Hello world!"
