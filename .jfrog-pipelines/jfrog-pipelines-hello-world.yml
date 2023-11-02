@@ -110,12 +110,26 @@
 
 
 
+# pipelines:
+#   - name: viren_demo
+#     steps:
+#       - name: print_hello_world
+#         type: Bash
+#         execution:
+#          onExecute:
+#           - echo: Hello World!
+
+
+
+---
 pipelines:
   - name: viren_demo
     steps:
       - name: print_hello_world
         type: Bash
         execution:
-         onExecute:
-          - echo: Hello World!
+          onExecute:
+            - task: echo
+              args:
+                - Hello World!
 
