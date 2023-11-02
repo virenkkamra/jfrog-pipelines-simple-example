@@ -115,5 +115,7 @@ pipelines:
     steps:
       - name: print_hello_world
         type: Bash
-        script: echo "Hello world!"
+        execution:
+         onExecute:
+          - echo: Hello World!
 
