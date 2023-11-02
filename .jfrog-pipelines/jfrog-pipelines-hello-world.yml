@@ -1,4 +1,4 @@
-# template: true   # required for local templates
+template: true   # required for local templates
 # valuesFilePath: ./values.yml
 
 # resources:
@@ -90,6 +90,16 @@
 #             - echo "CommitSha is $res_thisPropertyBag_commitSha"
 
 
+# pipelines:
+#   - name: viren_demo
+#     steps:
+#       - name: demo_step
+#         type: Bash
+#         execution:
+#           onExecute:
+#             -echo: Hello World
+
+
 pipelines:
   - name: viren_demo
     steps:
@@ -97,8 +107,8 @@ pipelines:
         type: Bash
         execution:
           onExecute:
-            -echo: Hello World
-
+            - echo: Hello World
+            - echo: This is a demo step!
 
 
 # ---
