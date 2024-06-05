@@ -2,7 +2,7 @@ template: true
 valuesFilePath: ./values.yml
 
 resources:
-  - name: npm_repo_jfp_example
+  - name: custom_resource
     type: GitRepo
     configuration:
       gitProvider: {{ .Values.myRepo.gitProvider }}
@@ -17,7 +17,7 @@ pipelines:
         type: Bash
         configuration:
           inputResources:
-            - name: npm_repo_jfp_example
+            - name: custom_resource
         execution:
           onExecute: 
             - echo "HELLO WORLD"
