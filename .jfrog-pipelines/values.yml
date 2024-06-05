@@ -2,4 +2,4 @@ myRepo:
   # gitProvider: my_github_custom
   gitProvider: my_github_custom_2
   # path: virenkkamra/jfrog-pipelines-simple-example
-  path: virenkkamra
+  path: virenkkamra/virenkkamra
