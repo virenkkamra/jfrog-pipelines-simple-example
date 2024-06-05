@@ -1,3 +1,3 @@
 myRepo:
-  gitProvider: my_github
+  gitProvider: my_github_custom
   path: virenkkamra/jfrog-pipelines-hello-world
