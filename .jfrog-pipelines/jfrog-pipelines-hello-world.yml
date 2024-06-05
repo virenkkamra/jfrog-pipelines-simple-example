@@ -1,7 +1,7 @@
 pipelines:  
-  - name: automation_demo_PDE
+  - name: hello_world_jfrog_pipelines
     steps:  
-      - name: demoZstepAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+      - name: hello_world_jfrog_steps
         type: Bash
         execution:
           onExecute: 
