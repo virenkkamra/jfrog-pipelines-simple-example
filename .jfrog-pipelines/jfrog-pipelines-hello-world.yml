@@ -1,3 +1,34 @@
+# template: true
+# valuesFilePath: ./values.yml
+
+# resources:
+#   - name: custom_resource
+#     type: GitRepo
+#     configuration:
+#       gitProvider: {{ .Values.myRepo.gitProvider }}
+#       path: {{ .Values.myRepo.path }}
+#       branches:
+#         include: master
+
+# pipelines:  
+#   - name: hello_world_jfrog_pipelines
+#     steps:  
+#       - name: hello_world_jfrog_steps
+#         type: Bash
+#         configuration:
+#           inputResources:
+#             - name: custom_resource
+#         execution:
+#           onExecute: 
+#             - echo "HELLO WORLD"
+#           onFailure:
+#             - echo "on fail success"
+#           onSuccess:
+#             - echo "on Success verify onCommit autoTrigger RUN:3"
+#           onComplete:
+#             - echo "on complete"
+
+
 template: true
 valuesFilePath: ./values.yml
 
@@ -20,7 +51,12 @@ pipelines:
             - name: custom_resource
         execution:
           onExecute: 
-            - echo "HELLO WORLD"
+            - task: $res_custom_resource_resourcePath
+              id: my-awesome-task
+              input:
+                version: "1.21.3"
+                skipCache: false
+                failOnCacheMiss: false
           onFailure:
             - echo "on fail success"
           onSuccess:
