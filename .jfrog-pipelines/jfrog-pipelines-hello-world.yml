@@ -1,23 +1,23 @@
 template: true
 valuesFilePath: ./values.yml
 
-resources:
-  - name: custom_resource
-    type: GitRepo
-    configuration:
-      gitProvider: {{ .Values.myRepo.gitProvider }}
-      path: {{ .Values.myRepo.path }}
-      branches:
-        include: master
+# resources:
+#   - name: custom_resource
+#     type: GitRepo
+#     configuration:
+#       gitProvider: {{ .Values.myRepo.gitProvider }}
+#       path: {{ .Values.myRepo.path }}
+#       branches:
+#         include: master
 
 pipelines:  
   - name: hello_world_jfrog_pipelines
     steps:  
       - name: hello_world_jfrog_steps
         type: Bash
-        configuration:
-          inputResources:
-            - name: custom_resource
+        # configuration:
+        #   inputResources:
+        #     - name: custom_resource
         execution:
           onExecute: 
             - echo "HELLO WORLD"
