@@ -26,7 +26,7 @@ pipelines:
           onSuccess:
             - echo "on Success verify onCommit autoTrigger RUN:3"
           onComplete:
-            - save_tests $res_custom_resource_resourcePath/testreport.xml
+            - save_tests $res_custom_resource_resourcePath/README.md
 
 # pipelines:
 #   - name: master_pipelines
