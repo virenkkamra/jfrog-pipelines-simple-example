@@ -1,51 +1,51 @@
-# template: true
-# valuesFilePath: ./values.yml
+template: true
+valuesFilePath: ./values.yml
 
-# # resources:
-# #   - name: custom_resource
-# #     type: GitRepo
-# #     configuration:
-# #       gitProvider: {{ .Values.myRepo.gitProvider }}
-# #       path: {{ .Values.myRepo.path }}
-# #       branches:
-# #         include: master
+resources:
+  - name: custom_resource
+    type: GitRepo
+    configuration:
+      gitProvider: {{ .Values.myRepo.gitProvider }}
+      path: {{ .Values.myRepo.path }}
+      branches:
+        include: master
 
-# pipelines:  
-#   - name: hello_world_jfrog_pipelines
-#     steps:  
-#       - name: hello_world_jfrog_steps
-#         type: Bash
-#         # configuration:
-#         #   inputResources:
-#         #     - name: custom_resource
-#         execution:
-#           onExecute: 
-#             - echo "HELLO WORLD"
-#           onFailure:
-#             - echo "on fail success"
-#           onSuccess:
-#             - echo "on Success verify onCommit autoTrigger RUN:3"
-#           onComplete:
-#             - echo "on complete"
-
-pipelines:
-  - name: master_pipelines
-    steps:
-      - name: trigger_pipeline_step
-        type: TriggerPipeline
-        configuration:
-          pipelineName: branch_pipeline
-          stepName: branch_pipelines_step_one
-          integrations:
-            - name: jpat_deepak
-        execution:
-          onStart:
-            - echo "master pipeline trigger"               
-            
-  - name: branch_pipeline
-    steps: 
-      - name: branch_pipelines_step_one
+pipelines:  
+  - name: hello_world_jfrog_pipelines
+    steps:  
+      - name: hello_world_jfrog_steps
         type: Bash
+        configuration:
+          inputResources:
+            - name: custom_resource
         execution:
-          onExecute:
-            - echo "branch pipeline trigger"
+          onExecute: 
+            - echo "HELLO WORLD"
+          onFailure:
+            - echo "on fail success"
+          onSuccess:
+            - echo "on Success verify onCommit autoTrigger RUN:3"
+          onComplete:
+            - echo "on complete"
+
+# pipelines:
+#   - name: master_pipelines
+#     steps:
+#       - name: trigger_pipeline_step
+#         type: TriggerPipeline
+#         configuration:
+#           pipelineName: branch_pipeline
+#           stepName: branch_pipelines_step_one
+#           integrations:
+#             - name: jpat_deepak
+#         execution:
+#           onStart:
+#             - echo "master pipeline trigger"               
+            
+#   - name: branch_pipeline
+#     steps: 
+#       - name: branch_pipelines_step_one
+#         type: Bash
+#         execution:
+#           onExecute:
+#             - echo "branch pipeline trigger"
